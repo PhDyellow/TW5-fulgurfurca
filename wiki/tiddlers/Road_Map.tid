@@ -1,0 +1,59 @@
+created: 20151102021154217
+creator: Philip Dyer
+modified: 20151103061359589
+modifier: Philip Dyer
+tags: WIP
+title: Road Map
+type: text/vnd.tiddlywiki
+
+I would like most of the UI to depend on fields more than the type tag. The tabs used by a tiddler should be listed explicitly in each tiddler, not transcluded. Hard to bulk update a type, but that is not normal behaviour anyway. It is possible with some of the field manipulating widgets though.
+
+*no functionality is 100% dependent on the type, so all UI elements use the existence of field data to switch
+
+The existence of a # means I want to be able to link to tiddlers tag style. ## means a single entry only
+
+*fulgur
+**core <- stuff all types can use
+***icon ## <-I wouldn't mind allowing people to put their own fontAwesome markup here, but the core uses transclusion
+***tabs
+***about <-not sure whether to just tag for this one. Describes generic link
+***picture
+****caption
+****file
+****source ##
+****tooltip
+***summary <- the short description of the tiddler, usually this gets transcuded if the title is too non-descript as opposed to the text body
+**person <- A person has history, actions and thoughts.
+***birthdate
+***birthplace
+***deathdate
+***deathplace
+***name 
+***surname
+***interests <- thoughts, usually high level, but can also be people if they are, say, a historian
+***colleagues <- people this person associates with. 
+**publication
+***... This would be basically reference software options. A script in awk or equivalent will allow json to be tiddler formatted
+**thoughts <- a simpler word for the intangibles
+***origins 
+****publications # <-publications that proposed thought
+****authors # <- people that proposed thought, usually the authors of the publications field
+****thoughts <- other thoughts that led to this one
+
+types
+
+*group <- a set of people formally associated like a company or team
+*person
+*publication
+**...This would be basically reference software options. A script in awk or equivalent will allow json to be tiddler formatted
+***Chapter
+***Quote
+*thought
+**idea <- an  inspiration or hypothesis. The bottom of the intangibles heirachy.
+**concept <- getting tricky now. Not a concrete thing like person and publication, concepts are fluid, theey are really thoughts that may or may not become actions. Concepts are well established ideas or sets of ideas
+**theory <- A well established concept, usually tested and formalised. theories are the top level intangible.
+**Topic <- a container type, mostly used for explaining the link between various people, publications and intangibles.
+*Note <- the generic data type, not for ideas, not for comments
+
+
+Can do total co-authors, get the publications by a person, then get all the unique authors of those publications.
