@@ -1,9 +1,6 @@
 {
   "plugins": [
-    "tiddlywiki/github-fork-ribbon",
     "tiddlywiki/highlight",
-    "tiddlywiki/tiddlyweb",
-    "tiddlywiki/filesystem",
     "phdyellow/fulgurfurca"
   ],
   "themes": [
